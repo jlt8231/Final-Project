@@ -20,7 +20,7 @@ public class MusicAppGUI {
         try {
             String[] result = SongGenerator.getSong(genre);
             songTitleLabel.setText("Title: " + result[0]);
-            artistLabel.setText("Artist: " + result[1]);
+            artistLabel.setText("Artist: " + result[1] + "\nFeatured Artists: " + result[2]);
 
             java.time.LocalDateTime now = java.time.LocalDateTime.now();
             java.time.format.DateTimeFormatter formatter =
@@ -45,7 +45,7 @@ public class MusicAppGUI {
         try {
             String[] result = SongGenerator.getSongByArtist(artistName);
             songTitleLabel.setText("Title: " + result[0]);
-            artistLabel.setText("Artist: " + result[1]);
+            artistLabel.setText("Artist: " + result[1] + "\nFeatured Artists: " + result[2]);
 
             java.time.LocalDateTime now = java.time.LocalDateTime.now();
             java.time.format.DateTimeFormatter formatter =
@@ -63,7 +63,7 @@ public class MusicAppGUI {
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Music Generator App");
-        frame.setSize(450, 450);
+        frame.setSize(450, 500);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JPanel panel = new JPanel();
